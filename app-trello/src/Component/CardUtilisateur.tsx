@@ -1,8 +1,9 @@
+import React, { useState } from 'react';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
-import React, { useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { ScrollPanel } from 'primereact/scrollpanel';
+import { Avatar } from 'primereact/avatar';
 
 
 interface ICardUtilisateurProps {
@@ -30,13 +31,13 @@ function CardUtilisateur({ utilisateur }: ICardUtilisateurProps) {
 
     return (
         <div className="card w-6 mx-5 flex justify-content-center">
-            <Card title="Liste" subTitle="UTILISATEURS" header={header} className="md:w-25rem">
+            <Card title="Liste" subTitle="UTILISATEURS" header={header} className="w-full">
                 <ScrollPanel style={{ width: '100%', height: '550px' }}>
                     <ul className="m-0 ">
-                        {utilisateur.map(item => (
+                        {utilisateur.map((item, key) => (
                             <div className='flex-initial flex align-items-center justify-content-between py-3'>
-                                <img alt='' src={item.photo} />
-                                <li className='list-none' key={item.idutilisateur}>{item.nom} {item.prenom}</li>
+                                <Avatar image={item.photo} className="mr-2" size="large" shape="circle" />
+                                <li className='list-none' key={key}>{item.nom} {item.prenom}</li>
                                 <div className="card flex justify-content-center">
                                     <Button label="Voir" icon="pi pi-external-link" onClick={() => { setVisible(true); setSelectedUser(item) }} />
                                     <Dialog header="Profile" visible={visible} style={{ width: '50vw' }} onHide={() => setVisible(false)} footer={footerContent}>
