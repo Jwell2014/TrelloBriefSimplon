@@ -8,7 +8,7 @@ import { Avatar } from 'primereact/avatar';
 
 interface ICardUtilisateurProps {
     utilisateur: {
-        idutilisateur: number, nom: string; prenom: string; motDePasse: string; description: string; photo: string; poste: string
+        idutilisateur: number, nom: string; prenom: string; description: string; photo: string; poste: string
     }[]
 }
 function CardUtilisateur({ utilisateur }: ICardUtilisateurProps) {
@@ -19,12 +19,11 @@ function CardUtilisateur({ utilisateur }: ICardUtilisateurProps) {
     );
     const [visible, setVisible] = useState(false);
     const [selectedUser, setSelectedUser] = useState<{
-        idutilisateur: number, nom: string; prenom: string; motDePasse: string; description: string; photo: string; poste: string
+        idutilisateur: number, nom: string; prenom: string; description: string; photo: string; poste: string
     } | null>(null);
 
     const footerContent = (
         <div>
-            <Button label="No" icon="pi pi-times" onClick={() => setVisible(false)} className="p-button-text" />
             <Button label="Fermer" icon="pi pi-check" onClick={() => { setVisible(false) }} autoFocus />
         </div>
     );

@@ -7,6 +7,8 @@ interface IProfileProps {
         nom: string;
         prenom: string;
         photo: string;
+        poste: string;
+        description: string;
     }[]
 }
 
