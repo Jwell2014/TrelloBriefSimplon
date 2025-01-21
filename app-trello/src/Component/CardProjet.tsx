@@ -36,7 +36,7 @@ function CardProjet({ projet, utilisateur, findNomResponsable }: ICardProjetProp
     console.log(projet)
     console.log(utilisateur)
     return (
-        <div className="card flex justify-content-center">
+        <div className="card w-6 mx-5 flex justify-content-center">
 
             <Card title="Liste" subTitle="PROJET" header={header} className="md:w-25rem">
                 <AddProjet findNomResponsable={findNomResponsable} utilisateur={utilisateur} />

@@ -17,7 +17,7 @@ interface IHomeProps {
 function Home({ utilisateur, projet, findNomResponsable }: IHomeProps) {
 
     return (
-        <div className="card-container" >
+        <div className="flex justify-content-around" >
             <CardUtilisateur utilisateur={utilisateur} />
             <CardProjet projet={projet} utilisateur={utilisateur} findNomResponsable={findNomResponsable} />
         </div>

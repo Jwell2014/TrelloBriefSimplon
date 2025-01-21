@@ -6,6 +6,7 @@ import axios from 'axios';
 import CardProjet from '../Component/CardProjet';
 import Profile from './Profile';
 import SignUp from './SignUp';
+import { Dialog } from 'primereact/dialog';
 
 interface ILoginProps {
     connected: boolean
@@ -15,10 +16,11 @@ function Login({ connected, setConnected }: ILoginProps) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [visible, setVisible] = useState<boolean>(false);
+    const [message, setMessage] = useState<string>("");
+
 
     const handleLogin = async () => {
-        console.log(username)
-        console.log(password)
 
         try {
             const response = await axios.post('https://localhost:7203/api/Home', {
@@ -33,9 +35,32 @@ function Login({ connected, setConnected }: ILoginProps) {
             // La réponse réussie est dans response.data
             console.log(response.data);
             setConnected(response.data)
+            if (response.data === false) {
+                setVisible(true);
+                setMessage("Votre nom d'utilisateur ou votre mot de passe est incorrect.");
+            }
+            if (!username) {
+                setVisible(true);
+                setMessage("Le nom d'utilisateur est requis.");
+            }
+            if (!password) {
+                setVisible(true);
+                setMessage("Le mot de passe est requis.");
+            }
 
-        } catch (error) {
-            console.error('Erreur lors de la connexion :', error);
+        } catch (error: any) {
+            if (error.response) {
+                // Erreurs de réponse (backend)
+                console.log('Erreur de la réponse :', error.response.data);
+                console.log('Status code :', error.response.status);
+            } else if (error.request) {
+                // La requête a été envoyée mais aucune réponse n'a été reçue
+                console.log('Erreur de la requête :', error.request);
+            } else {
+                // Autre erreur
+                console.log('Erreur inconnue :', error.message);
+            }
+
         }
     };
 
@@ -65,6 +90,9 @@ function Login({ connected, setConnected }: ILoginProps) {
                     </div>
                     <Button label="Connecter" icon="pi pi-user" className="w-10rem mx-auto" onClick={handleLogin}></Button>
                 </div>
+                <Dialog header="Erreur" visible={visible} position="left" style={{ width: '50vw' }} onHide={() => { if (!visible) return; setVisible(false); }} draggable={false} resizable={false}>
+                    <p>{message}</p>
+                </Dialog>
                 <div className="w-full md:w-2">
                     <Divider layout="vertical" className="hidden md:flex">
                         <b>OR</b>

@@ -29,7 +29,7 @@ function CardUtilisateur({ utilisateur }: ICardUtilisateurProps) {
     );
 
     return (
-        <div className="card flex justify-content-center">
+        <div className="card w-6 mx-5 flex justify-content-center">
             <Card title="Liste" subTitle="UTILISATEURS" header={header} className="md:w-25rem">
                 <ScrollPanel style={{ width: '100%', height: '550px' }}>
                     <ul className="m-0 ">
