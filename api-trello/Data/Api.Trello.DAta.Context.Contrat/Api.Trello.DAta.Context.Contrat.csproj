@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Api.Trello.Data.Entity\Api.Trello.Data.Entity.csproj" />
+    <ProjectReference Include="..\Api.Trello.Data.Repository.Contrat\Api.Trello.Data.Repository.Contrat.csproj" />
+  </ItemGroup>
+</Project>

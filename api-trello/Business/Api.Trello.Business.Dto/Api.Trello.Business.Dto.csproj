@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Actions\" />
+    <None Remove="MembreProjet\" />
+    <None Remove="Projet\" />
+    <None Remove="StatutTache\" />
+    <None Remove="Tache\" />
+    <None Remove="Utilisateur\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Actions\" />
+    <Folder Include="MembreProjet\" />
+    <Folder Include="Projet\" />
+    <Folder Include="StatutTache\" />
+    <Folder Include="Tache\" />
+    <Folder Include="Utilisateur\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Api.Trello.Data.Entity\Api.Trello.Data.Entity.csproj" />
+  </ItemGroup>
+</Project>
