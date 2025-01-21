@@ -1,3 +1,58 @@
+# TrelloBriefSimplon
+
+Ce projet est une application inspirée de Trello, développée dans le cadre de la formation Simplon. Il s'agit d'une application web complète comprenant un **backend** développé en C# et un **frontend** conçu avec React. L'objectif est de permettre une gestion efficace des tâches et des tableaux de manière intuitive.
+
+---
+
+## 🚀 Fonctionnalités principales
+
+### Gestion des utilisateurs :
+- Création de compte et connexion.
+- Gestion des profils utilisateur.
+
+### Gestion des tableaux et tâches :
+- Création, modification et suppression de tableaux.
+- Ajout, mise à jour et suppression de tâches.
+- Organisation des tâches par colonnes (Kanban).
+
+### Interface utilisateur moderne :
+- Conçue avec React et les bibliothèques **PrimeReact/PrimeFlex** pour une expérience utilisateur fluide.
+
+### API documentée avec Swagger :
+- Documentation interactive pour tester les endpoints.
+
+---
+
+## 📂 Structure du projet
+
+Le projet est organisé en deux parties :
+
+```plaintext
+TrelloBriefSimplon/
+├── backend/     # Contient le code backend (API et logique métier)
+├── frontend/    # Contient le code frontend (interface utilisateur)
+```
+
+
+## Backend
+
+### Technologies :
+- **Langage** : C#
+- **Base de données** : MySQL (gérée via phpMyAdmin)
+- **Documentation API** : Swagger
+- **API REST** : Gestion des utilisateurs, tableaux et tâches.
+- **Authentification** : JWT (JSON Web Token) pour sécuriser les endpoints.
+
+---
+
+## Frontend
+
+### Technologies :
+- **Langage** : React
+- **Bibliothèques** : PrimeReact, PrimeFlex
+- **Consommation d'API** : Axios pour les appels vers le backend.
+- **Design responsive** : Optimisé pour les écrans de bureau et mobiles.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
