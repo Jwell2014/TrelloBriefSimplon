@@ -54,7 +54,7 @@ function SignUp({ setConnected }: ISignUpProps) {
     );
     return (
         <div className="card flex justify-content-center">
-            <Button label="Show" icon="pi pi-external-link" onClick={() => setVisible(true)} />
+            <Button label="S'inscrire" icon="pi pi-external-link" onClick={() => setVisible(true)} />
             <Dialog header="Créer un compte" visible={visible} style={{ width: '50vw' }} onHide={() => setVisible(false)} footer={footerContent}>
                 <div className="flex flex-wrap justify-content-center align-items-center gap-2">
                     <label className="w-6rem">Nom</label>

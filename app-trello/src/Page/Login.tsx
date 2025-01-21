@@ -41,12 +41,12 @@ function Login({ connected, setConnected }: ILoginProps) {
 
     return (
         <div>
-            <div className="flex flex-column m-auto md:flex-row">
+            <div className="flex flex-column m-auto h-screen md:flex-row">
                 <div className="w-full md:w-5 flex flex-column align-items-center justify-content-center gap-3 py-5">
                     <div className="flex flex-wrap justify-content-center align-items-center gap-2">
                         <label className="w-6rem">Username</label>
                         <InputText
-                            id="username"
+                            id="Nom"
                             type="text"
                             className="w-12rem"
                             value={username}
@@ -56,14 +56,14 @@ function Login({ connected, setConnected }: ILoginProps) {
                     <div className="flex flex-wrap justify-content-center align-items-center gap-2">
                         <label className="w-6rem">Password</label>
                         <InputText
-                            id="password"
+                            id="Mot de passe"
                             type="password"
                             className="w-12rem"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <Button label="Login" icon="pi pi-user" className="w-10rem mx-auto" onClick={handleLogin}></Button>
+                    <Button label="Connecter" icon="pi pi-user" className="w-10rem mx-auto" onClick={handleLogin}></Button>
                 </div>
                 <div className="w-full md:w-2">
                     <Divider layout="vertical" className="hidden md:flex">
@@ -73,7 +73,7 @@ function Login({ connected, setConnected }: ILoginProps) {
                         <b>OR</b>
                     </Divider>
                 </div>
-                <div className="w-full md:w-5 flex align-items-center justify-content-center py-5">
+                <div className="w-full md:w-5 flex align-items-center justify-content-center">
                     <SignUp setConnected={setConnected} />
                 </div>
             </div>
